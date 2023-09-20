@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DetailsCollectionCell" id="gTV-IL-0wX" customClass="DetailsCollectionCell" customModule="MarvelApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="123" height="216"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="123" height="216"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="dsG-Ui-UZu">
+                        <rect key="frame" x="4" y="8" width="115" height="168"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Test Test Test Test Test " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="de4-EY-Bt8">
+                        <rect key="frame" x="0.0" y="184" width="123" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="oTV-7D-cPV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="de4-EY-Bt8" secondAttribute="trailing" id="6ND-8d-JTc"/>
+                <constraint firstItem="de4-EY-Bt8" firstAttribute="top" secondItem="dsG-Ui-UZu" secondAttribute="bottom" constant="8" id="8Kk-sZ-BQT"/>
+                <constraint firstAttribute="trailing" secondItem="dsG-Ui-UZu" secondAttribute="trailing" constant="4" id="9ei-l5-emN"/>
+                <constraint firstItem="dsG-Ui-UZu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="FuD-ph-xb4"/>
+                <constraint firstAttribute="bottom" secondItem="de4-EY-Bt8" secondAttribute="bottom" id="Re6-LI-STE"/>
+                <constraint firstItem="de4-EY-Bt8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mcF-Of-RlA"/>
+                <constraint firstItem="dsG-Ui-UZu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="ous-1Z-HZI"/>
+            </constraints>
+            <size key="customSize" width="123" height="216"/>
+            <connections>
+                <outlet property="mainImg" destination="dsG-Ui-UZu" id="fPM-zq-WXL"/>
+                <outlet property="titleLbl" destination="de4-EY-Bt8" id="ea9-0w-ZjW"/>
+            </connections>
+            <point key="canvasLocation" x="-19.083969465648853" y="77.464788732394368"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Splash" width="564" height="1145"/>
+    </resources>
+</document>
