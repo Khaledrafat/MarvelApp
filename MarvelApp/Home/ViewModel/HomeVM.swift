@@ -11,6 +11,7 @@ import Combine
 final class HomeVM: HomeVMProtocol {
     
     weak var coordinator: HomeCoordinator?
+    private var total: Int = 0
     private var interactor: HomeInteractorProtocol
     private var currentLimit: Int = 0
     private var currentCharacters = [Character]()
@@ -62,10 +63,14 @@ final class HomeVM: HomeVMProtocol {
                 }
             } receiveValue: {[weak self] data in
                 guard let self = self else { return }
-                guard let response = data as? HomeDataModel else { return }
-                //Error Message HERE #1
-                guard let characters = response.data?.results else { return }
-                //Error Message HERE #2
+                guard let response = data as? HomeDataModel else {
+                    self.output.send(.showError("Error Parsing Data"))
+                    return
+                }
+                guard let characters = response.data?.results else {
+                    self.output.send(.showError("Error No Data"))
+                    return
+                }
                 self.currentLimit += 10
                 characters.forEach({self.currentCharacters.append($0)})
                 self.output.send(.dataSourcePublisher(self.currentCharacters.count))

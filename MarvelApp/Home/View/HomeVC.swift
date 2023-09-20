@@ -46,12 +46,18 @@ class HomeVC: BaseVC {
             .sink { [weak self] event in
             guard let self = self else { return }
             switch event {
+                // MARK: - Loader
             case .loaderISHidden(let value):
                 self.view.isUserInteractionEnabled = value
                 self.loader.isHidden = value
+                
+                // MARK: - Data
             case .dataSourcePublisher(let count):
                 self.collectionCells = count
                 self.homeCollectionView.reloadData()
+                
+            case .showError(let message):
+                self.showAlert(with: message)
             }
         }
             .store(in: &cancellable)

@@ -61,12 +61,18 @@ final class DetailsVM: DetailsVMProtocol {
                 }
             } receiveValue: { [weak self] data in
                 guard let self = self else { return }
-                guard let response = data as? DetailsModel else { return }
-                //Error Message HERE #1
-                guard response.data?.results.count ?? 0 > 0 else { return }
-                //Error Message HERE #2
-                guard let result = response.data?.results[0] else { return }
-                //Error Message HERE #3
+                guard let response = data as? DetailsModel else {
+                    self.output.send(.showError("Error Parsing Data"))
+                    return
+                }
+                guard response.data?.results.count ?? 0 > 0 else {
+                    self.output.send(.showError("Error No Data"))
+                    return
+                }
+                guard let result = response.data?.results[0] else {
+                    self.output.send(.showError("Error No Data"))
+                    return
+                }
                 
                 self.output.send(.name(result.name))
                 self.output.send(.desc(result.description))

@@ -13,7 +13,7 @@ enum HomeInput {
 }
 
 enum HomeOutput {
-    case loaderISHidden(Bool) , dataSourcePublisher(Int)
+    case loaderISHidden(Bool) , dataSourcePublisher(Int) , showError(String)
 }
 
 

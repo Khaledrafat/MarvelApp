@@ -41,6 +41,7 @@ enum DetailsInput {
 enum DetailsOutput {
     case loaderISHidden(Bool) , mainImage(URL?) , name(String?) , desc(String?)
     case resources([Resources]) , collection((DetailsCollectionType , Int))
+    case showError(String)
 }
 
 protocol DetailsVMProtocol {

@@ -100,6 +100,10 @@ class DetailsVC: BaseVC {
                     guard let url = url else { return }
                     self.headerImg.sd_setImage(with: url , placeholderImage: UIImage())
                     
+                    // MARK: - Show Error Message
+                case .showError(let message):
+                    self.showAlert(with: message)
+                    
                     // MARK: -  Resources
                 case .resources(let resources):
                     guard resources.count > 0 else {
